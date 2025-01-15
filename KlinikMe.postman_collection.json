@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "dbb4c44f-9eab-41f7-9d0e-9a4a9af8e2d8",
+		"name": "KlinikMe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28588219"
+	},
+	"item": [
+		{
+			"name": "Doctor - Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\": \"John Doe\",\r\n    \"jenis\": \"gigi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{lcl}}/api/v1/doctor/register",
+					"host": [
+						"{{lcl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"doctor",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Doctor - List By Jenis",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jenis\": \"gigi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{lcl}}/api/v1/doctor/filter/jenis",
+					"host": [
+						"{{lcl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"doctor",
+						"filter",
+						"jenis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Schedule - Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hari\": \"Senin\",\r\n    \"tanggal_buka\": \"2025-01-01\",\r\n    \"jam_buka\": \"08:00\",\r\n    \"jam_tutup\": \"17:00\",\r\n    \"doctor_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{lcl}}/api/v1/schedule/register",
+					"host": [
+						"{{lcl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"schedule",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Schedule - List Doctor Schedule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"doctor_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{lcl}}/api/v1/schedule/doctor",
+					"host": [
+						"{{lcl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"schedule",
+						"doctor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booking - Create New",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama_pasien\": \"Testing\",\r\n    \"nomor_telepon\": \"081234567890\",\r\n    \"schedule_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{lcl}}/api/v1/booking/create",
+					"host": [
+						"{{lcl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"booking",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "lcl",
+			"value": "127.0.0.1:3000",
+			"type": "default"
+		}
+	]
+}
